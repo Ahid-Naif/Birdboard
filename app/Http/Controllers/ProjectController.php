@@ -16,6 +16,12 @@ class ProjectController extends Controller
         return view('projects.index', ['projects' => $projects]);
     }
 
+    public function show(Project $project)
+    {
+        // show a single resource
+        return view('projects.show', ['project' => $project]);
+    }
+
     public function store()
     {
         // persist the new resource

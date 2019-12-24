@@ -1,5 +1,6 @@
 User:
  -> can create a project
+ -> can view a project
 
 
 Project:
