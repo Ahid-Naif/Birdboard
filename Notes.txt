@@ -1,6 +1,7 @@
 User:
  -> can create a project
  -> can view a project
+ -> has Many Projects ( One-to-Many relationship )
 
 
 Project:
