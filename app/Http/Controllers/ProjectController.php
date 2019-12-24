@@ -33,10 +33,13 @@ class ProjectController extends Controller
 
     public function validateProject()
     {
-        return request()->validate([
+        $attributes = request()->validate([
             'title'       => 'required',
             'description' => 'required',
-            'owner_id'    => 'required'
         ]);
+
+        $attributes['owner_id'] = auth()->id();
+        
+        return $attributes;
     }
 }
