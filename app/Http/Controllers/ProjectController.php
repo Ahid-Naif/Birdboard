@@ -35,7 +35,8 @@ class ProjectController extends Controller
     {
         return request()->validate([
             'title'       => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'owner_id'    => 'required'
         ]);
     }
 }
