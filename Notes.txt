@@ -1,0 +1,7 @@
+User:
+ -> can create a project
+
+
+Project:
+ -> requires a title
+ -> requires a description
