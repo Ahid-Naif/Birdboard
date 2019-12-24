@@ -25,8 +25,7 @@ class ProjectController extends Controller
     public function store()
     {
         // persist the new resource
-        $project = new Project($this->validateProject());
-        $project->save();
+        auth()->user()->projects()->create($this->validateProject());
 
         return redirect(route('projects.index'));
     }
@@ -37,8 +36,6 @@ class ProjectController extends Controller
             'title'       => 'required',
             'description' => 'required',
         ]);
-
-        $attributes['owner_id'] = auth()->id();
         
         return $attributes;
     }
