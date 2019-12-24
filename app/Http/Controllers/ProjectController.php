@@ -16,20 +16,27 @@ class ProjectController extends Controller
         return view('projects.index', ['projects' => $projects]);
     }
 
+    public function show(Project $project)
+    {
+        // show a single resource
+        return view('projects.show', ['project' => $project]);
+    }
+
     public function store()
     {
         // persist the new resource
-        $project = new Project($this->validateProject());
-        $project->save();
+        auth()->user()->projects()->create($this->validateProject());
 
         return redirect(route('projects.index'));
     }
 
     public function validateProject()
     {
-        return request()->validate([
+        $attributes = request()->validate([
             'title'       => 'required',
-            'description' => 'required'
+            'description' => 'required',
         ]);
+        
+        return $attributes;
     }
 }

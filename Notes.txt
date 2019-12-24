@@ -1,0 +1,11 @@
+User:
+ -> can create a project
+ -> can view a project
+ -> has Many Projects ( One-to-Many relationship )
+
+
+Project:
+ -> requires a title
+ -> requires a description
+ -> has a path (unit test/ model test)
+ -> has an owner -> owner is an authenticated owner (step 2) {only authenticated users can create a project}
